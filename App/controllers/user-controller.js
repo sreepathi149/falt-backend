@@ -22,7 +22,7 @@ userCltr.register = async (req, res) => {
             const salt = await bcrypt.genSalt()
             const hashedPassword = await bcrypt.hash(user.password, salt)
             user.password = hashedPassword
-            user.subscriptionEndDate = new Date(endDate.setDate(endDate.getDate() + 1))
+            user.subscriptionEndDate = new Date(endDate.setDate(endDate.getDate() + 14))
             const userDoc = await user.save()
             if(userDoc) {
                 const body = pick(req.body, ['companyName', 'companyWebsite', 'companyAddress'])

@@ -10,6 +10,7 @@ paymentsCltr.checkOut = async (req,res)=>{
     try{
         const body=req.body
         console.log(body)
+        const endDate = new Date()
         const lineitems = body.map((ele)=>({
             price_data:{
                 currency:"inr",
@@ -29,9 +30,12 @@ paymentsCltr.checkOut = async (req,res)=>{
             cancel_url: 'http://localhost:3000/pricing'
         })
         console.log(session)
-        res.json({
-            url:session.url
-        })
+        if(session.id) {
+            //user.subscriptionEndDate = new Date(endDate.setDate(endDate.getDate() + 1))
+            res.json({
+                url:session.url
+            })
+        }
     }
     catch(err){
         res.json(err.message)
