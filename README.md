@@ -2,7 +2,7 @@
 1.npm install
 2.setup and create your twilio account
 3.setup your locationIq account
-4.Set-up/Create your Node-Mailer account.
+4.Set-up/Create your Node-Mailer account
 5.Set-up/Create your Stripe account.
 6.Set-up/Create your AWS S3 Bucket.
 7.Configure .env file using the Sample Template provided.
